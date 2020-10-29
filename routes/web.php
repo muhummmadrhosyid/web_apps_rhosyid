@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UtamaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/about-me', function () {
+    return "Nama Saya <b>Muhammad Rhosyid Akhmad</b>";
+});
+
+Route::get('/utama/test', [UtamaController::class, "test"]);
