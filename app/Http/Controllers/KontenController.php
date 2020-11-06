@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-class AboutController extends Controller
+class KontenController extends Controller
 {
     public function test()
     {
-        return view("about");
+        return view("konten");
     }
 }
