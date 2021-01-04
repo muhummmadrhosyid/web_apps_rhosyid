@@ -1,18 +1,20 @@
 <?php
 
-use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AboutController;
-use App\Http\Controllers\KontenController;
-use App\Http\Controllers\logoutController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\RegistrasiController;
+
 
 
 Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/form', function () {
+    return view('registrasi.form');
+});
 
 Route::get("/home", [HomeController::class, "index"]);
-Route::get("/about", [AboutController::class, "test"]);
-Route::get("/konten", [KontenController::class, "test"]);
-Route::get("/logout", [LogoutController::class, "test"]);
+
+Route::get("/registrasi/form", [RegistrasiController::class, "registrasi"])->name("regis_form");
+Route::post("/registrasi/proses", [RegistrasiController::class, "proses"])->name("regis_proses");
